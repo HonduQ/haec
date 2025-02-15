@@ -13,21 +13,4 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
-
-  @@map("users")
-}
-
-model horses {
-  id  Int @default(autoincrement()) @id
-  show_name  String @unique
-  name  String 
-  feed  String	
-  created_at  DateTime @default(now())
-  updated_at  DateTime @default(now())
-  deleted_at  DateTime?
-}
 
