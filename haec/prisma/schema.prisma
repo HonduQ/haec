@@ -22,12 +22,14 @@ model User {
   @@map("users")
 }
 
-model horses {
+model Horse {
   id  Int @default(autoincrement()) @id
-  show_name  String @unique
+  showName    String   @unique     @map("show_name")
   name  String 
   feed  String	
   created_at  DateTime @default(now())
   updated_at  DateTime @default(now())
   deleted_at  DateTime?
+
+  @@map("horses")
 }
