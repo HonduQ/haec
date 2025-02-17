@@ -3,8 +3,7 @@ import { HorseService } from '../services/horse.service';
 
 @Controller('horses')
 export class HorseController {
-
-  constructor(private readonly horseService:HorseService){}
+  constructor(private readonly horseService: HorseService) {}
 
   @Get()
   public async findAll() {
@@ -13,7 +12,6 @@ export class HorseController {
 
   @Post()
   handlePost(@Body() body: any): string {
-  return this.horseService.writeJSONBody(body);
+    return this.horseService.writeJSONBody(body);
   }
-
 }
