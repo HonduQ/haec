@@ -1,10 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { Request, Response, NextFunction, request } from 'express';
+import { PrismaService } from '../../prisma.service';
 
 @Injectable()
 export class HorseService {
+
+    constructor(private readonly prismaService:PrismaService){}
+
     public async getHorses() {
-        return "This is a string";
+        return this.prismaService.horse.findMany();
     }
 
     public writeJSONBody(data: any) {

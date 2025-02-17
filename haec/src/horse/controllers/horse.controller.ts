@@ -14,6 +14,6 @@ export class HorseController {
   @Post()
   handlePost(@Body() body: any): string {
   return this.horseService.writeJSONBody(body);
-}
+  }
 
 }
