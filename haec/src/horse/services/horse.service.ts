@@ -22,7 +22,6 @@ export class HorseService {
     return id;
   }
 
-
   public async softDeleteHorse(id: number): Promise<number> {
     const softDeleteHorse = await this.prismaService.horse.update({
       where: { id: id },
@@ -32,6 +31,4 @@ export class HorseService {
     console.log(softDeleteHorse);
     return id;
   }
-
-
 }
