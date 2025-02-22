@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { HorseService } from '../services/horse.service';
+import { UpdateHorseDto } from '../dto/update-horse.dto';
 
 @Controller('horses')
 export class HorseController {
@@ -15,15 +16,14 @@ export class HorseController {
     return this.horseService.createHorse(body);
   }
 
-  @Post('/delete')
-  async delete(@Body() data: { id: number }) {
-    const horseID = data.id;
-    return await this.horseService.deleteHorse(horseID);
-  }
-
   @Post('/softDelete')
   async softDelete(@Body() data: { id: number }) {
     const horseID = data.id;
     return await this.horseService.softDeleteHorse(horseID);
+  }
+
+  @Post('/update')
+  updateHorse(@Body() id: number, updateHorseDto: UpdateHorseDto) {
+    return this.horseService.updateHorse(id, updateHorseDto);
   }
 }

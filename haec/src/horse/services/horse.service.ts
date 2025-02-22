@@ -1,7 +1,6 @@
 import { Injectable, Param } from '@nestjs/common';
 import { PrismaService } from '../../prisma.service';
-import { JsonObject } from '@prisma/client/runtime/library';
-import { ParamsTokenFactory } from '@nestjs/core/pipes';
+import { UpdateHorseDto } from '../dto/update-horse.dto';
 
 @Injectable()
 export class HorseService {
@@ -16,19 +15,27 @@ export class HorseService {
     return this.prismaService.horse.create({ data });
   }
 
-  public async deleteHorse(id: number): Promise<number> {
-    const deleteHorse = await this.prismaService.horse.delete({ where: { id: id }, });
-    console.log(deleteHorse);
-    return id;
-  }
-
   public async softDeleteHorse(id: number): Promise<number> {
     const softDeleteHorse = await this.prismaService.horse.update({
       where: { id: id },
       data: { deletedAt: new Date() }
-    }
-    );
-    console.log(softDeleteHorse);
+    });
     return id;
   }
+
+  public async updateHorse(id: number, updateHorseDto: UpdateHorseDto): Promise<number> {
+    const data = {
+      id,
+      updatedAt: new Date(),
+      ...updateHorseDto,
+    };
+
+    const updateHorseData = await this.prismaService.horse.update({
+      where: { id: id },
+      data,
+    });
+    console.log(updateHorseData);
+    return id;
+  }
+
 }
