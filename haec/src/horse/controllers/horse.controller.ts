@@ -12,18 +12,18 @@ export class HorseController {
   }
 
   @Post('/create')
-  async create(@Body() body: { showName: string; name: string; feed: string }) {
+  public async create(@Body() body: { showName: string; name: string; feed: string }) {
     return this.horseService.createHorse(body);
   }
 
   @Post('/softDelete')
-  async softDelete(@Body() data: { id: number }) {
+  public async softDelete(@Body() data: { id: number }) {
     const horseID = data.id;
     return await this.horseService.softDeleteHorse(horseID);
   }
 
   @Post('/update')
-  updateHorse(@Body() id: number, updateHorseDto: UpdateHorseDto) {
+  public updateHorse(@Body() id: number, updateHorseDto: UpdateHorseDto) {
     return this.horseService.updateHorse(id, updateHorseDto);
   }
 }
