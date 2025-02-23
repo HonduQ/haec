@@ -45,5 +45,4 @@ export class HorseService {
     });
     return id;
   }
-
 }
