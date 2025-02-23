@@ -23,7 +23,7 @@ export class HorseController {
   }
 
   @Post('/update')
-  public updateHorse(@Body() id: number, updateHorseDto: UpdateHorseDto) {
-    return this.horseService.updateHorse(id, updateHorseDto);
+  public async updateHorse(@Body() body: { id: number; updateHorseDto: UpdateHorseDto }) {
+    return await this.horseService.updateHorse(body.id, body.updateHorseDto);
   }
 }

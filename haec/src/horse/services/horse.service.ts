@@ -25,15 +25,15 @@ export class HorseService {
 
   public async updateHorse(id: number, updateHorseDto: UpdateHorseDto): Promise<number> {
     const data = {
-      id,
       updatedAt: new Date(),
       ...updateHorseDto,
     };
 
     const updateHorseData = await this.prismaService.horse.update({
-      where: { id: id },
+      where: { id },
       data,
     });
+
     console.log(updateHorseData);
     return id;
   }
