@@ -1,4 +1,4 @@
-import { Injectable, Param } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma.service';
 import { UpdateHorseDto } from '../dto/update-horse.dto';
 import { CreateHorseDto } from '../dto/create-horse.dto';
@@ -17,7 +17,7 @@ export class HorseService {
       name: createHorseDto.name,
       showName: createHorseDto.showName,
       feed: createHorseDto.feed,
-      createdAt: new Date(), // Optional, Prisma can auto-generate this
+      createdAt: new Date(),
       updatedAt: new Date(),
     };
 
