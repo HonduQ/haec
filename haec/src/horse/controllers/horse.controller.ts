@@ -14,7 +14,7 @@ export class HorseController {
 
   @Post('/create')
   public async create(@Body() createHorseDto: CreateHorseDto) {
-    return this.horseService.createHorse(createHorseDto);
+    return await this.horseService.createHorse(createHorseDto);
   }
 
   @Post('/update')
