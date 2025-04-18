@@ -1,4 +1,4 @@
-*HAEC Project Setup
+# HAEC Project Setup
 This document outlines the steps to get the project running in a local development environment.
 
 ## Prerequisites
@@ -9,34 +9,41 @@ This document outlines the steps to get the project running in a local developme
 - Yarn (preferred over npm): https://yarnpkg.com/
 
 ## Getting Started
-Clone the repository:
-- git clone git@github.com:honduq/haec.git
-- cd haec
+1. Clone the repository:
+``bash
+git clone git@github.com:honduq/haec.git
+cd haec
 
-## Install dependencies:
-- yarn
+2. Install dependencies:
+``bash
+yarn
 
-## Configure environment variables:
-Copy the example environment file and update values as needed:
-- cp .env.example .env
+3. Configure environment variables:
+- Copy the example environment file and update values as needed:
+``bash
+cp .env.example .env
 
-## Run database migrations:
-- npx prisma migrate dev
+4. Run database migrations:
+``bash
+npx prisma migrate dev
 
-##  Start the development server:
-- yarn start:dev
+5. Start the development server:
+``bash
+yarn start:dev
 
 ## SSH Setup (if using SSH for Git)
-Generate a new SSH key (if needed):
-- ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+1. Generate a new SSH key (if needed):
+``bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
-## Add your SSH public key to your Git provider:
+2. Add your SSH public key to your Git provider:
 - GitHub instructions: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
-## Test your SSH connection:
-- ssh -T git@github.com
+3. Verify your SSH connection:
+``bash
+ssh -T git@github.com
 
 ## Notes
-- Yarn is preferred for dependency management to ensure consistent builds across environments.
+- Yarn is preferred for dependency management to ensure consistency across environments.
 
-- This project uses Prisma for database management and migrations: https://www.prisma.io/
+- The project uses Prisma for database management and migrations. Visit [Prisma Docs](https://chatgpt.com/c/67fd9ca0-38c0-8008-9882-e4dc6809e5d3#:~:text=and%20migrations.%20Visit-,Prisma,-Docs%20for%20more) for more information.
