@@ -46,4 +46,4 @@ ssh -T git@github.com
 ## Notes
 - Yarn is preferred for dependency management to ensure consistency across environments.
 
-- The project uses Prisma for database management and migrations. Visit [Prisma Docs](https://chatgpt.com/c/67fd9ca0-38c0-8008-9882-e4dc6809e5d3#:~:text=and%20migrations.%20Visit-,Prisma,-Docs%20for%20more) for more information.
+- The project uses Prisma for database management and migrations. Visit [Prisma Docs](https://www.prisma.io/docs) for more information.
