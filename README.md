@@ -1,6 +1,9 @@
 # HAEC Project Setup
 This document outlines the steps to get the project running in a local development environment.
 
+## Project Overview: 
+- This HAEC Barn App will help barn workers to manage the care of horses. More detailed description to follow.
+
 ## Prerequisites
 - Git: https://git-scm.com/
 
