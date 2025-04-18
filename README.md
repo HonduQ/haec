@@ -50,3 +50,5 @@ This document outlines the steps to get the project running in a local developme
 - Yarn is preferred for dependency management to ensure consistency across environments.
 
 - The project uses Prisma for database management and migrations. Visit [Prisma Docs](https://www.prisma.io/docs) for more information.
+
+- [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
