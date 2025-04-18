@@ -15,32 +15,32 @@ This document outlines the steps to get the project running in a local developme
     cd haec
 ```
 2. Install dependencies:
-``bash
+```bash
 yarn
 ```
 3. Configure environment variables:
 - Copy the example environment file and update values as needed:
-``bash
+```bash
 cp .env.example .env
 ```
 4. Run database migrations:
-``bash
+```bash
 npx prisma migrate dev
 ```
 5. Start the development server:
-``bash
+```bash
 yarn start:dev
 ```
 ## SSH Setup (if using SSH for Git)
 1. Generate a new SSH key (if needed):
-``bash
+```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 2. Add your SSH public key to your Git provider:
 - GitHub instructions: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
 3. Verify your SSH connection:
-``bash
+```bash
 ssh -T git@github.com
 ```
 ## Notes
