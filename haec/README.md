@@ -1,56 +1,21 @@
-# HAEC Project Setup
+# HAEC Backend (NestJS)
 
-This document outlines the steps to get the project running in a local development environment.
+This is the backend service for the HAEC Barn App, helping barn workers manage the care of horses.
 
 ## Prerequisites
 
-- Git
-- Node.js (v23.11.0 or higher)
-- Yarn (preferred over npm)
+- Git: https://git-scm.com/
+- Node.js (v18+ recommended): https://nodejs.org/
+- Yarn (preferred over npm): https://yarnpkg.com/
 
 ## Getting Started
 
-1. **Clone the Repository**
-   ```bash
-   git clone git@github.com:honduq/haec.git
-   cd haec
+1. Run database migrations:
+   npx prisma migrate dev
 
-2. **Install Dependencies**
+2. Start the development server:
+   yarn start:dev
 
-    ```bash
-    yarn
+## Notes
 
-3. **Configure Environment Variables**
-
-    Copy .env.example to .env and update as needed:
-
-    ```bash
-    cp .env.example .env
-    
-4. **Run Migrations (if applicable)**
-
-    ```bash
-    npx prisma migrate dev
-
-5. **Start the Development Server**
-
-    ```bash
-    yarn start:dev
-
-6. **SSH Setup**
-
-- For authenticated Git operations via SSH:
-
-- Generate a new SSH key (if you don’t already have one).
-
-- Add the public key to your Git provider (e.g., GitHub).
-
-- Verify the connection:
-
-    ```bash
-    ssh -T git@github.com
-
-**Notes**
-- Yarn is preferred for consistency across environments.
-
-- Project uses Prisma for database migrations.
+- The project uses Prisma for database management and migrations. Visit https://www.prisma.io/docs for more information.
