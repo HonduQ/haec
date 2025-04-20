@@ -1,8 +1,47 @@
-# haec
+# HAEC Project Setup
 
-- run with "yarn start:dev"
+This document outlines the steps to get the project running in a local development environment.
 
-prisma specific commands:
-- npx prisma migrate dev 
-<!-- - npx prisma migrate dev --create-only -->
+## Prerequisites
 
+- Git: https://git-scm.com/
+- Node.js (v18+ recommended): https://nodejs.org/
+- Yarn (preferred over npm): https://yarnpkg.com/
+
+## Getting Started
+
+1. Clone the repository:
+    ```bash
+    git clone git@github.com:honduq/haec.git
+    cd haec
+    ```
+
+2. Install dependencies:
+    ```bash
+    yarn
+    ```
+
+3. Configure environment variables:
+    ```bash
+    cp .env.example .env
+    ```
+
+## SSH Setup (for all contributors)
+
+1. **Generate a new SSH key** (if needed):
+    ```bash
+    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    ```
+
+2. **Add your SSH public key to GitHub**:
+   - GitHub instructions: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+3. **Verify your SSH connection**:
+    ```bash
+    ssh -T git@github.com
+    ```
+
+## Notes
+
+- Yarn is preferred for dependency management to ensure consistency across environments.
+- [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
