@@ -26,6 +26,28 @@ This document outlines the steps to get the project running in a local developme
     cp .env.example .env
     ```
 
+4. Create a `.env` file in the project root. Ensure it includes the following: (Replace `username`, `password`, and `your-database` with your actual database credentials.)
+    ```bash
+    DATABASE_URL="postgresql://username:password@localhost:5432/your-database"
+    ```
+
+5. Run Database Migrations
+    ```bash
+    npx prisma migrate dev --name init
+    ```
+
+6. Start Development Server
+    ```bash
+    yarn start:dev
+    ```
+
+7. Seed the Database (Optional) 
+    #### If you need initial data in your database, run your SQL seed script using your preferred tool (e.g., pgAdmin, DBeaver, or the `psql` command line). For example:
+    ```bash
+    psql -U your_username -d your_database -f path/to/your/seed.sql
+    ```
+    #### (Replace your_username, your_database, and the path with your actual values.)
+    
 ## SSH Setup (for all contributors)
 
 1. **Generate a new SSH key** (if needed):
