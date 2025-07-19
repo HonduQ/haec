@@ -63,7 +63,31 @@ This document outlines the steps to get the project running in a local developme
     ssh -T git@github.com
     ```
 
-## Notes
+## Dev Notes
 
 - Yarn is preferred for dependency management to ensure consistency across environments.
 - [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
+
+# Postman
+- brew install --cask postman
+
+# prisma 
+## Run initial migration
+npx prisma migrate dev --name create-horse
+
+## If run from outside the /haec folder:
+npx prisma migrate dev --name create-horse --schema=haec/prisma/schema.prisma --env-file=haec/.env
+
+## Generate Prisma client manually (usually auto after migrate)
+npx prisma generate
+
+# Kill Process on Port 3000
+
+## Find the process using port 3000
+lsof -i :3000
+
+## Kill it by PID (replace 12345 with the real PID)
+kill -9 12345
+
+## One-liner to kill anything on 3000
+kill -9 $(lsof -t -i :3000)
