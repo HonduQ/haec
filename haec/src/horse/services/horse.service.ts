@@ -8,7 +8,11 @@ export class HorseService {
   constructor(private readonly prismaService: PrismaService) { }
 
   public async getHorses() {
-    const horses = await this.prismaService.horse.findMany();
+    const horses = await this.prismaService.horse.findMany({
+    where: {
+      deletedAt: null,
+    },
+  });
     return horses;
   }
 
